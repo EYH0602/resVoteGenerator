@@ -227,3 +227,14 @@ class resVoteServer:
             if vote and vote.election_id == election_id:
                 candidate_votes[vote.candidate_name] += 1
         return candidate_votes
+
+    def get_user(self, voter_id: str) -> Optional[Voter]:
+        """Get the voter object by voter_id.
+
+        Args:
+            voter_id (str): The voter ID.
+
+        Returns:
+            Optional[Voter]: The voter object if the voter exists, None otherwise.
+        """
+        return self.users.get(voter_id, None)

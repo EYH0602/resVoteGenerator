@@ -14,7 +14,7 @@ def main(config_path: str = "config.yaml"):
     password = "aaaa"
 
     s.register(username, password, True)
-    s.login(username, password)
+    s.login(username, password, True)
 
     assert s.create_election(username, "election0", "Alice,Bob,Charlie")
     assert s.create_election(username, "election2", "aa,bb,cc")
